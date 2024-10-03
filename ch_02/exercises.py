@@ -18,3 +18,15 @@ for neuron_weights, neuron_bias in zip(weights, biases):
     layer_outputs.append(neuron_output)
 
 print(f"{layer_outputs=}")
+
+# Do it with numpy for a single neuron
+import numpy as np
+
+outputs = np.dot(weights[0], inputs) + biases[0]
+
+print(f"{outputs=}")
+
+# now do it for the entire layer
+print(f"{np.dot(weights, inputs)=}")
+layer_outputs = np.dot(weights, inputs) + biases
+print(f"{layer_outputs=}")
